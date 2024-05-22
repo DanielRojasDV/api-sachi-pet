@@ -180,4 +180,5 @@ class categoriaController extends Controller
 
         return response()->json($data, 200);
     }
+    
 }
