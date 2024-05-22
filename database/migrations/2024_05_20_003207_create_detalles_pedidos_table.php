@@ -13,8 +13,8 @@ return new class extends Migration
     {
         Schema::create('detalles_pedidos', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('producto_id')->constrained()->onUpdate('cascade');
             $table->foreignId('pedido_id')->constrained()->onUpdate('cascade');
+            $table->foreignId('producto_id')->constrained()->onUpdate('cascade');
             $table->integer('cantidad');
             $table->integer('subtotal');
         });
