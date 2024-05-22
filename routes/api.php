@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Api\AuthController;
 use App\Http\Controllers\Api\categoriaController;
 use App\Http\Controllers\Api\marcaController;
 use App\Http\Controllers\Api\productoController;
@@ -59,3 +60,12 @@ Route::get('/pedidos', [pedidosController::class, 'index']);
 Route::get('/pedidos/{id}', [pedidosController::class, 'show']);
 
 Route::post('/pedidos', [pedidosController::class, 'store']);
+
+
+//*** */ Metodos autenticacion
+
+Route::post('/registro', [AuthController::class, 'registro']);
+
+Route::post('/login', [AuthController::class, 'login']);
+
+Route::middleware('auth:sanctum')->post('/logout', [AuthController::class, 'logout']);
